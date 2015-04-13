@@ -2,22 +2,23 @@
 
 var todoView = Backbone.View.extend({
     initialize : function(){
-        this.collection.bind('add', this.onModelAdded, this);
+        this.render();
     },
 
-    onModelAdded : function(addedModel){
-        this.render(addedModel);
+    events:{
+        'click [type="checkbox"]':'clicked'
     },
-
+    clicked : function(event){
+        console.log(event.target.checked);
+        todoCollectionObj.remove(this.model);
+        this.remove();
+    },
 
     render : function(model){
         var template = _.template( $("#todoItem").html());
-        var element = document.createElement('div');
-        $(element).html(template(model.toJSON()));
-        this.$el.append(element.children[0]);
+        this.$el.html(template(this.model.toJSON()));
         return this;
     }
-
 
 });
 

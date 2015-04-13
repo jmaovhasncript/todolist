@@ -23,11 +23,13 @@
 
 <script type="text/template" id="todoItem">
    <div>
+       <input type="checkbox" id="todoCheck" <% print( obj.done ?  'checked="checked"' : '') %> />
        <div class="item"><%= obj.item %></div>
    </div>
 </script>
 <script src="js/todoModel.js"></script>
 <script src="js/todoCollection.js"></script>
+<script src="js/todoCollectionView.js"></script>
 <script src="js/todoView.js"></script>
 <script src="js/todoParentView.js"></script>
 </body>

@@ -12,7 +12,7 @@ var parentView = Backbone.View.extend({
     render : function(){
         var template = _.template( $("#todoConTem").html());
         this.$el.html( template );
-        todoVewObj = new todoView({
+        todoVewObj = new todoCollectionView({
             collection :todoCollectionObj,
             el: $(".todoItemConatiner")
         });
