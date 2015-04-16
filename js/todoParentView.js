@@ -10,12 +10,21 @@ var parentView = Backbone.View.extend({
 
     },
     render : function(){
+        var menuItem = {
+            add1 : "add",
+            delete1 :'delete',
+            completed1:"completed",
+            todo1 : 'todo'
+
+        };
+
         var template = _.template( $("#todoConTem").html());
-        this.$el.html( template );
+        this.$el.html(template({menuItem :menuItem}));
         todoVewObj = new todoCollectionView({
             collection :todoCollectionObj,
             el: $(".todoItemConatiner")
         });
+        return this;
 
     },
     events: {
@@ -33,4 +42,3 @@ var parentView = Backbone.View.extend({
 });
 
 
-var parentViewObj = new parentView({el : $("#topContainer") });

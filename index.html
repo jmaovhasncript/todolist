@@ -14,6 +14,14 @@
 
 <script type="text/template" id="todoConTem">
     <div id="todoContainer">
+        <header> TODO </header>
+        <div class="menuContainer">
+
+            <% _.each(menuItem, function(item) { %>
+            <div class="menuItem"><a href="#<%= item %>/3"><%= item %></a></div>
+            <% }); %>
+
+        </div>
         <input type="text" placeholder="type here">
         <div class="todoItemConatiner">
 
@@ -27,10 +35,13 @@
        <div class="item"><%= obj.item %></div>
    </div>
 </script>
+
 <script src="js/todoModel.js"></script>
 <script src="js/todoCollection.js"></script>
 <script src="js/todoCollectionView.js"></script>
 <script src="js/todoView.js"></script>
 <script src="js/todoParentView.js"></script>
+<script src="js/todoRouter.js"></script>
+
 </body>
 </html>
